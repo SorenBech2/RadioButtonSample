@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:popup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
+             xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             x:Class="RadioButtonSample.MainPage">
+
+    <VerticalStackLayout Padding="12">
+        <popup:SfPopup x:Name="popup" AutoSizeMode="Height" HeaderTitle="RadioGroup">
+            <popup:SfPopup.ContentTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout Padding="20">
+                        <Picker Title="Select Payment Method" SelectedItem="{Binding SelectedOption, Mode=TwoWay}">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>NetBanking</x:String>
+                                    <x:String>DebitCard</x:String>
+                                    <x:String>CreditCard</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                        <buttons:SfRadioGroup SelectedValue="{Binding SelectedOption, Mode=TwoWay}">
+                            <buttons:SfRadioButton Text="Net banking" Value="NetBanking" />
+                            <buttons:SfRadioButton Text="Debit card" Value="DebitCard" />
+                            <buttons:SfRadioButton Text="Credit card" Value="CreditCard" />
+                        </buttons:SfRadioGroup>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </popup:SfPopup.ContentTemplate>
+        </popup:SfPopup>
+        <Button Text="Show popup" Clicked="Button_Clicked" />
+    </VerticalStackLayout>
+
+</ContentPage>
