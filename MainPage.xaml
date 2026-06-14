@@ -6,7 +6,7 @@
              x:Class="RadioButtonSample.MainPage">
 
     <VerticalStackLayout Padding="12">
-        <popup:SfPopup x:Name="popup" AutoSizeMode="Height" HeaderTitle="RadioGroup">
+        <popup:SfPopup x:Name="popup" AutoSizeMode="Height" HeaderTitle="RadioGroup" Opening="popup_Opening">
             <popup:SfPopup.ContentTemplate>
                 <DataTemplate>
                     <VerticalStackLayout Padding="20">

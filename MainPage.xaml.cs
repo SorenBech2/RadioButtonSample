@@ -3,7 +3,6 @@ using System.Runtime.CompilerServices;
 
 namespace RadioButtonSample
 {
-
     public partial class MainPage : ContentPage
     {
         private PaymentModel _viewModel;
@@ -21,8 +20,14 @@ namespace RadioButtonSample
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            _viewModel.SelectedOption = "DebitCard";
             popup.Show();
+            Task.Delay(50);
+            _viewModel.SelectedOption = "DebitCard";
+        }
+
+        private void popup_Opening(object sender, CancelEventArgs e)
+        {
+            //_viewModel.SelectedOption = "DebitCard";
         }
     }
 
@@ -50,7 +55,5 @@ namespace RadioButtonSample
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
-
-
     }
 }
